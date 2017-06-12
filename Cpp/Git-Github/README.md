@@ -1,7 +1,8 @@
 # Software
 ## Git-Github
-> Võ Xuân Khang
-> Mục lục:
+> Thực hiện: Võ Xuân Khang
+
+Mục lục:
 
 ###  [1. Giới thiệu](#GioiThieu)
 ### [2. Thao tác cơ bản](#ThaoTac)
