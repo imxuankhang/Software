@@ -1,7 +1,7 @@
 # Software
 ## Git-Github
 > Võ Xuân Khang
-Mục lục:
+> Mục lục:
 
 ###  [1. Giới thiệu](#GioiThieu)
 ### [2. Thao tác cơ bản](#ThaoTac)
