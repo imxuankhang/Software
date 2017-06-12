@@ -108,24 +108,27 @@ Hoặc dùng **Enter** và __Tab__ như sau:
 	- Thụt đầu dòng lần 1
  - Gạch đầu dòng 2
  	- Thụt đầu dòng lần 1
+ ```
 
  Kết quả:
- 	- Gạch đầu dòng 1
- 		- Thụt đầu dòng lần 1
- 	- Gạch đầu dòng 2
- 		- Thụt đầu dòng lần 1
-```
+ 
+ - Gạch đầu dòng 1
+ 	- Thụt đầu dòng lần 1
+ - Gạch đầu dòng 2
+ 	- Thụt đầu dòng lần 1
+
 
  #### 2.5 Chú thích cuối trang
 
  Chú thích `[^1]` `[^2]`
 
- Kết quả: 
+ Kết quả:
+
  [^1] Chú thích 1
 
  #### 2.6 Chèn bảng
 
-  ```
+ ```
 |Cột 1 hàng 1|Cột 2|Cột 3|
 |----------------|-------|-------|
 |hàng 2|2x2|2x3|
@@ -138,8 +141,10 @@ kq:
 |hàng 2|2x2|2x3|
 |hàng 3|3x2|3x3|
 
-	- kí tự bắt đầu 1 hàng: |
-	- Kí tự tách phần header: -
+- kí tự bắt đầu 1 hàng: |
+
+- Kí tự tách phần header: -
+
 #### 2.7 Tạo điểm nhấn
 
 Để tạo điểm nhấn dùng cặp == ==
