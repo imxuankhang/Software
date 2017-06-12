@@ -4,10 +4,10 @@
 
 ### Mục lục.
 
-[1. Markdown là gì?]
+[1. Markdown là gì](#gioithieu)
 
--[1.1 Gioi thiệu](#gioithieu)
--[1.2 Markdown dùng để làm gì?](#tacdung)
+	[1.1 Gioi thiệu](#gioithieu)
+	[1.2 Markdown dùng để làm gì?](#tacdung)
 
 [2. Cú pháp](#cuphap)
 
