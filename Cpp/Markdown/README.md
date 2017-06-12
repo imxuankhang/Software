@@ -90,49 +90,56 @@ Kết quả:
 
 Để gạch đầu dòng sử dụng
 
-`- Gạch đầu dòng 1
+```
+- Gạch đầu dòng 1
 <ul>
 <li> Thụt đầu dòng lần 1 </li>
 </ul>
 - Gạch đầu dòng 2
 <ul>
 <li>Thụt đầu dòng lần 1 </li>
-</ul>`
+</ul>
+```
  
 Hoặc dùng **Enter** và __Tab__ như sau:
 
-`- Gạch đầu dòng 1
+```
+- Gạch đầu dòng 1
 	- Thụt đầu dòng lần 1
  - Gạch đầu dòng 2
- 	- Thụt đầu dòng lần 1`
+ 	- Thụt đầu dòng lần 1
 
  Kết quả:
  	- Gạch đầu dòng 1
  		- Thụt đầu dòng lần 1
  	- Gạch đầu dòng 2
  		- Thụt đầu dòng lần 1
+```
 
  #### 2.5 Chú thích cuối trang
 
  Chú thích `[^1]` `[^2]`
 
- 	Kết quả: [^1] Chú thích 1
+ Kết quả: 
+ [^1] Chú thích 1
 
  #### 2.6 Chèn bảng
 
-  `|Cột 1 hàng 1 |Cột 2|Cột 3|
-   |----------------|-----|-----|
-   |hàng 2|2x2  |2x3  |
-   |hàng 3|3x2  |3x3  |`
+  ```
+|Cột 1 hàng 1|Cột 2|Cột 3|
+|----------------|-------|-------|
+|hàng 2|2x2|2x3|
+|hàng 3|3x2|3x3|
+```
+kq:
 
-  `Kí tự bắt đầu 1 hàng hoặc cột: |
-   Kí tự tách thành header: -`
+|Cột 1 hàng 1|Cột 2|Cột 3|
+|----------------|-------|-------|
+|hàng 2|2x2|2x3|
+|hàng 3|3x2|3x3|
 
-  Kết quả:  |Cột 1 hàng 1 |Cột 2|Cột 3|
-  			|---------------|-----|-----|
-  			|hàng 2|2x2  |2x3  |
-  			|hàng 3|3x2  |3x3  |
-
+	- kí tự bắt đầu 1 hàng: |
+	- Kí tự tách phần header: -
 #### 2.7 Tạo điểm nhấn
 
 Để tạo điểm nhấn dùng cặp == ==
@@ -144,9 +151,11 @@ Kết quả: ==AAA==
 ``` code
 printf("AAA");
 ```
-Kết quả:	``` code
-			printf("AAA");
-			```
+Kết quả:	
+``` code
+printf("AAA");
+```
+
 #### 2.9 Trích dẫn
 
 Dùng cặp dấu `` hoặc `````` để tạo trích dẫn
@@ -158,7 +167,8 @@ Kết quả `Khang`
 ### 3. Cài đặt subline text. Tìm kiếm cài đặt các công cụ hỗ trợ Markdown
 
 Các bạn dowload **Subline Text** tại đường dẫn https://www.sublimetext.com/3. Cài đặt sau đó click vào tùy chọn *install package* như hình
-https://github.com/imxuankhang/Software/blob/master/Cpp/Markdown/img/img1.png sau đó tìm kiếm các công cụ và install
+![](https://github.com/imxuankhang/Software/blob/master/Cpp/Markdown/img/img1.png)
+ sau đó tìm kiếm các công cụ và install
 
 <a name="congcu"></a>
 
@@ -174,7 +184,7 @@ Chúng ta có thể sử dụng bất kỳ trình soạn thảo nào như sublim
 
 <a name="ketluan"></a>
 
-###5. Kết luận
+### 5. Kết luận
 
 #### Ưu điểm.
 Đây là một ngôn ngữ cơ bản dễ dùng giúp ta có thể sử dụng rất nhiều nơi với cú pháp cơ bản. Có lẽ đây là ưu điểm lớn nhất của Markdown.
