@@ -92,7 +92,8 @@ Một chương trình C++ được định nghĩa như một tập hợp các đ
 
 <a name='cautruc'></a>
 
-`#include <iostream>
+`
+#include <iostream>
 using namespace std;
 
 // main() is where program execution begins.
@@ -100,8 +101,8 @@ using namespace std;
 int main() {
    cout << "Hello World"; // prints Hello World
    return 0;
-}`
-
+}
+`
 
 - Header: ngôn ngữ C++ định nghĩa một số header, nơi chứa thông tin cần thiết hoặc hữu ích cho chương trình của bạn. Đối với chương trình in *Hello world* này thì header `iostream` là cần thiết
 - Dòng `using namespace std` nói với trình biên dịch là sử dụng *std namespace*. Std namespaces là quan hệ gần đây thêm vào cho C++ 
@@ -135,15 +136,21 @@ Ví dụ: Dưới dây là 3 câu lệnh khác nhau
 y=y+1;
 add(x,y);`
 - Một khối là một tập các câu lệnh được kết nối 1 cách logic bao quanh bởi các dấu đóng mở ngoặc 
-Ví dụ: 
-`{
+Ví dụ:
+
+`
+{
 	cout<<"Hello World";
 	return 0;
-}`
-- `x=y;
-	y=y+1;
-	add(x,y);`
-	tương đương với `x=y; y=y+1; add(x,y);`
+}
+`
+
+`
+x=y;
+y=y+1;
+add(x,y);
+`
+tương đương với `x=y; y=y+1; add(x,y);`
 
 #### 2.4 Định dang trong C++
 
@@ -158,21 +165,21 @@ Một định danh C++ là một cái tên được sử dụng để xác đị
 Dưới đây là danh sách các từ dành riêng trong C++, không được sử dụng là hằng, biến hay bất cứ thứ gì khác 	
 `
 |--asm-------|--else---|--------new------|----this--|
-|--auto------|	enum---|-----operator----|--throw---|
-|--bool------|explici--|-----private-----|--true----|
-|break-------|export---|-----protected-ơ-|----try---|
-|case--------|extern---|	public-------|--typedef-|
-|catch-------|false----|	register-----|--typeid__|
-|char--------|float	---|reinterpret_cast-|typename--|
-|class	-----|for------|return-----------|-union----|
-|const	-----|friend---|	short--------|-unsigned-|
-|const_cast--|goto-----|	signed-------|-using----|
-|continue----|	if-----|	sizeof-------|-virtual--|
-|default-----|inline---|	static-------|-void-----|
-|delete	-----|int------|static_cast------|-volatile-|
-|do----------|long-----|	struct-------|-wchar_t--|
-|double	-----|mutable--|	switch-------|	while---|
-|dynamic_cast|namespace|	template-----|	--------| 
+|--auto------|--enum---|-----operator----|---throw--|
+|--bool------|-explici-|-----private-----|---true---|
+|---break----|--export-|-----protected-ơ-|----try---|
+|---case-----|-extern--|----public-------|--typedef-|
+|---catch----|--false--|----register-----|--typeid--|
+|----char----|--float--|reinterpret_cast-|-typename-|
+|--class-----|---for---|-----return------|---union--|
+|----const---|--friend-|----short--------|-unsigned-|
+|-const_cast-|---goto--|----signed-------|---using--|
+|--continue--|--if-----|----sizeof-------|-virtual--|
+|--default---|--inline-|----static-------|---void---|
+|---delete---|---int---|---static_cast---|-volatile-|
+|-----do-----|---long--|----struct-------|-wchar_t--|
+|---double---|-mutable-|----switch-------|--while---|
+|dynamic_cast|namespace|----template-----|----------| 
 `
 #### 2.6 Khoảng trắng 
 
