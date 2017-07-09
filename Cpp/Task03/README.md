@@ -42,11 +42,9 @@
 
 *type* là một loại dữ liệu hợp lệ như *char,float,int,bool..* hoặc bất kì đối tương người dùng định nghĩa khác và *variable_list* gồm một nhiều tên định danh cách nhau bởi dấu *,*
 
-`
-int i,j,k;
-char c, ch;
-float f, salary;
-`
+`int i,j,k;`
+`char c, ch;`
+`float f, salary;`
 
 Các biến có thể được khởi tạo (gán giá trị đầu) ngay lúc khai báo chúng
 
@@ -61,74 +59,42 @@ Các biến có thể được khởi tạo (gán giá trị đầu) ngay lúc k
 - Một khai báo biến rất hữu ích khi bạn sử dụng nhiều tệp tin và bạn cần xác định biến của bạn trong một trong những tệp tin hợp lệ tại thời điểm liên kết của chương trình. Bạn sẽ sử dụng từ khóa *extern* để khai báo một biến ở bất kì đâu. Mặc dù bạn có thể khai báo một biến nhiều lần trong một một chương trình C++, tuy nhiên nó chỉ được xác định một lần trong một file,hàm hay một khối mã 
 **Ví dụ** biến được khai báo ở trên nhưng nó được xác định trong hàm *main()*
 
-`
-#include <iostream>
+`#include <iostream>`
+`using namespace std;`
+`// Variable declaration:`
+`extern int a, b;`
+`extern int c;`
+`extern float f;`
+`int main ()` 
+`{`
+	`// Variable definition:`
+	`int a, b;`
+	`int c;`
+	`float f;`
+ 	`// actual initialization`
+	`a = 10;`
+	`b = 20;`
+	`c = a + b;`
+ 	`cout << c << endl ;`
+	`f = 70.0/3.0;`
+	`cout << f << endl ;`
+ 	`return 0;`
+`}`
 
-using namespace std;
-
-// Variable declaration:
-
-extern int a, b;
-
-extern int c;
-
-extern float f;
-
-int main () 
-
-{
-
-	// Variable definition:
-
-	int a, b;
-
-	int c;
-
-	float f;
-
- 	// actual initialization
-
-	a = 10;
-
-	b = 20;
-
-	c = a + b;
-
- 	cout << c << endl ;
-
-	f = 70.0/3.0;
-
-	cout << f << endl ;
-
- 	return 0;
-
-}
-`
 
 - Tương tự như vậy, áp dụng cho khai báo hàm. Bạn có thể khai báo hàm ở trên, và nó được định nghĩa ở bất cứ nơi nào
 
-`
-// function declaration
-
-int func();
-
-int main() 
-
-{
-
-   // function call
-
-   int i = func();
-
-}
-
-// function definition
-
-int func() {
-
-   return 0;
-
-}
-`
+`// function declaration`
+`int func();`
+`int main()` 
+`{`
+`// function call`
+`int i = func();`
+`}`
+`// function definition`
+`int func()` 
+`{`
+	`return 0;`
+`}`
 
 
