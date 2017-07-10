@@ -46,8 +46,10 @@
 
 - Một biến cung cấp cho ta một tên bộ nhớ mà chương trình có thể thao tác được. Mỗi biến trong C++ có một dạng riêng, xác định kích thước và không gian bộ nhớ của biến cũng như phạm vi giá trí có thể lưu trữ trong bộ nhớ đó; và thiết lập hoạt động có thể áp dụng cho biến đó.
 - Tên của biến có thể gồm chữ, số, và dấu gạch dưới `_`. Nó chỉ được bắt đầu với từ hoặc kí tự gạch dưới. Chữ hoa và chữ thường là khác nhau vì C++ phân biệt chữ hoa và chữ thường
+
 **Dưới đây là một số dạng biến đơn giản**
 <img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task03/Images/img1.PNG">
+
 - C++ cũng cho phép chấp nhận nhiều kiểu biến khác nhau, ta sẽ đề cập chúng ở các chương sau
 
 ### 1.1 Variable definition 
@@ -60,11 +62,11 @@
 
 > *type* là một loại dữ liệu hợp lệ như *char,float,int,bool..* hoặc bất kì đối tương người dùng định nghĩa khác và *variable_list* gồm một nhiều tên định danh cách nhau bởi dấu *,*
 
-`
+```
 int i,j,k;
 char c, ch;
 float f, salary;
-`
+```
 
 - Các biến có thể được khởi tạo (gán giá trị đầu) ngay lúc khai báo chúng
 
@@ -112,7 +114,7 @@ int main ()
 
 - Tương tự như vậy, áp dụng cho khai báo hàm. Bạn có thể khai báo hàm ở trên, và nó được định nghĩa ở bất cứ nơi nào
 
-`
+```
 // function declaration
 
 int func();
@@ -130,7 +132,7 @@ int func()
 {
 	return 0;
 }
-`
+```
 
 ### 1.3 Rvalues và Lvalues
 
@@ -163,7 +165,7 @@ Dưới đây là không hợp lệ và có thể tạo ra lỗi biên dịch
 
 Biến cục bộ được khai báo bên trong một hàm. Bạn chỉ được sử dụng chúng trong hàm đó 
 
-`
+```
 #include <iostream>
 using namespace std;
  int main () 
@@ -182,14 +184,14 @@ using namespace std;
    cout << c;
    return 0;
 }
-`
+```
 
 ### 2.2 Biến toàn cục
 
 - Biến toàn cục được xác định bên ngoài của tất cả các hàm, thường là trên đầu của chương trình. Gía trị của các biến toàn cục được giữ trong suốt chương trình. 
 - Chúng có thể được sử dụng bởi bất kì hàm nào
 
-`
+```
 #include <iostream>
 using namespace std;
  
@@ -211,10 +213,10 @@ int g;
    cout << g;
    return 0;
 }
-`
+```
 - Một chương trình có thể có biến cục bộ và biến toàn cục cùng tên với nhau. Nhưng giá trị của biến cục bộ mới được hàm chấp nhận 
 
-`
+```
 #include <iostream>
 using namespace std;
  
@@ -229,7 +231,7 @@ int main () {
    cout << g;
    return 0;
 }
-`
+```
 ### 2.3 Initializing local và global variables
 
 <a name='initializationlocal&globalvariables'></a>
@@ -252,16 +254,16 @@ int main () {
 - Một kí tự nguyên cũng có thể có một hậu tố là một sự kệt hợp của U và L, cho *unsigned* và *long*. Hậu tố có thể là chữ hoa, chữ thường và có thể ở bất kì thứ tự nào
 Ví dụ
 
-`
+```
 212         // Legal
 215u        // Legal
 0xFeeL      // Legal
 078         // Illegal: 8 is not an octal digit
 032UU       // Illegal: cannot repeat a suffix
-`
+```
 Nhiều dạng của kí tự nguyên
 
-`
+```
 85         // decimal
 0213       // octal
 0x4b       // hexadecimal
@@ -269,7 +271,7 @@ Nhiều dạng của kí tự nguyên
 30u        // unsigned int
 30l        // long
 30ul       // unsigned long
-`
+```
 ### 3.2 Floating-point literals (Dấu chấm động)
 
 <a name='dauchamdong'></a>
@@ -277,13 +279,13 @@ Nhiều dạng của kí tự nguyên
 - Một dấu chấm động có một phần số nguyên, dấu chấm thập phân, một phần phân số và một phần số mũ. Bạn có thể đại diện dấu chấm động ở dạng thập phân hoặc dạng số mũ
 - Khi đại diện ở dạng thập phân, bạn phải bao gồm dấu thập phân, số mũ hoặc cả hai. Khi đại diện ở dạng số mũ bạn phải bao gồm phần số nguyên, phần phân số hoặc cả hai. Chữ ký số được đại diễn bởi *e* hoặc *E*
 
-`
+```
 3.14159       // Legal
 314159E-5L    // Legal
 510E          // Illegal: incomplete exponent
 210f          // Illegal: no decimal or exponent
 .e55          // Illegal: missing integer or fraction
-`
+```
 
 ### 3.3 Boolean literals
 
