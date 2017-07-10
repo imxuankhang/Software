@@ -298,5 +298,35 @@ Nhiều dạng của kí tự nguyên
 
 <a name='kitu'></a>
 
+- Kí tự là đính kèm với dấu ngoặc đơn. Nếu một kí tự bắt đầu với *L* (chỉ chữ hoa), nó là một kí tự rộng (ví dụ như L'x') được lưu trữ ở dạng `wchar_t`. Nếu không, nó là một kí tự chữ hẹp (ví dụ 'x') và được lưu trữ trong một biến đơn giản loại *char* 
+- Một số kí tự trong C++ khi chúng được đánh dấu bằng dấu gạch chéo ngược, chúng sẽ mang nghĩa đặc biệt và được dùng để đại diện cho dòng mới (\n) hoặc tab (\t)
+Một số danh sách có chức năng tương tự như vậy
 
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task03/Images/img3.PNG">
+
+Ví dụ
+```
+#include <iostream>
+using namespace std;
+int main() {
+   cout << "Hello\tWorld\n\n";
+   return 0;
+}
+```
+
+### 3.4 Kí tự chuỗi
+
+<a name='kituchuoi'></a>
+
+- Các kí tự chuỗi được đính kèo trong dấu ngoặc kép. Một chuỗi chứa các kí tự tương tự như là kí tự *character* 
+- Có thể phá vỡ một dòng dài thành nhiều dòng bằng cách sử dụng *string literals* và tách bằng cách dùng khoảng trắng
+Dưới đây là một số ví dụ. Cả 3 dạng đều giống nhau
+
+```
+"hello, dear"
+"hello, \
+dear"
+"hello, " "d" "ear"
+```
+### 3.5 Defining Constants
 
