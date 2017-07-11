@@ -23,15 +23,15 @@
 - Dòng bình luận bắt đầu bằng /* và kết thúc */
 Ví dụ
 
-`
+```
 /* this is a comment */
-`
+```
 - Dòng bình luận cũng có thể bắt đầu bằng // và kéo dài đến cuối dòng
 Ví dụ
 
-`
+```
 // this is a comment 
-`
+```
 
 ## 2. C++ data types
 
@@ -106,7 +106,7 @@ Có 7 kiểu cơ bản trong C++
 - Kích thước của biến có thể khác với các giá trị được ghi trên bảng tùy vào trình biên dịch và máy tính bạn đang sử dụng 
 - Để chắc chắn ta sử dụng hàm sau:
 
-`
+```
 #include <iostream>
 
 using namespace std;
@@ -122,7 +122,7 @@ int main()
 	cout << "Size of wchar_t : " << sizeof(wchar_t) << endl;
 	return 0;
 }
-`
+```
 - Sử dụng **endl** để xuống dòng và **sizeof** để có được kích thước của từng loại dữ liệu khác nhau
 
 ### 2.2  **typedef**
@@ -143,14 +143,13 @@ Bạn có thể đặt một cái tên mới cho dạng dữ liệu hiện có b
 
 Ví dụ, liệt kê các màu và biến *c* của kiểu màu. Cuối cùng, *c* được gán là *blue*
 
-` 
+``` 
 enum color { blue, red, black} c;
 
 c = blue;
-` 
+``` 
 Theo mặc định, giá trị đầu tiên của tên đầu tiên là 0, tiếp theo là 1,... nhưng ta có thể cho một tên một giá trị cụ thể như ví dụ dưới
 
-`
-enum color { red, green=5, blue };
-`
+`enum color { red, green=5, blue };`
+
 Tại đây tên *blue* sẽ có giá trị là 6
