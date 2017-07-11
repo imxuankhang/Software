@@ -393,10 +393,10 @@ int main()
 
 - C++ cho phép các kiểu dữ liệu như **char,int, double** có các bổ nghĩa trước nó. Bổ nghĩa được sử dụng để thay đổi ý nghĩa của các loại kiểu dữ liệu cơ sở để nó phù hợp hơn với nhu cầu của các tình huống khác nhau
 - Các bổ nghĩa của các kiểu dữ liệu được liệt kê dưới đây
- - **signed**
- - **unsigned**
- - **long**
- - **short**
+	- **signed**
+	- **unsigned**
+	- **long**
+	- **short**
 - Kiểu bổ nghĩa **signed, unsigned, long, short** có thể áp dụng cho kiểu số nguyên. Ngoài ra, **signed, unsigned** có thể áp dụng cho kiểu **char** và **long** có thể áp dụng cho **double**
 - Bổ nghĩa **signed, unsigned** cũng có thể sử dụng như tiền tố của **long** hoặc **short**
 VD: `unsigned long int`
@@ -430,7 +430,7 @@ Sau khi chạy, chương trình sẽ có kết quả
 
 `-15536 50000`
 
-* Kết quả trên là vì mẫu bit đại diện *50000* ở kiểu **short unsigned int** được giải thích như *-15536* ở kiểu **short** *
+*Kết quả trên là vì mẫu bit đại diện *50000* ở kiểu **short unsigned int** được giải thích như *-15536* ở kiểu **short***
 
 - Các dạng vòng cung cấp thông tin bổ sung cho các biến mà nó đứng trước
 
