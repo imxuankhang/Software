@@ -430,7 +430,7 @@ Sau khi chạy, chương trình sẽ có kết quả
 
 `-15536 50000`
 
-*Kết quả trên là vì mẫu bit đại diện *50000* ở kiểu **short unsigned int** được giải thích như *-15536* ở kiểu **short***
+Kết quả trên là vì mẫu bit đại diện *50000* ở kiểu **short unsigned int** được giải thích như *-15536* ở kiểu **short**
 
 - Các dạng vòng cung cấp thông tin bổ sung cho các biến mà nó đứng trước
 
