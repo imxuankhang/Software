@@ -32,11 +32,11 @@
 
 [3.5 String literals](#kituchuoi)
 
-[3.6 Defining Constants]
+[3.6 Defining Constants](#xacdinhhang)
 
-[3.7 The #define preprocessor]
+[3.7 The #define preprocessor](#define)
 
-[3.8 The const Keyword]
+[3.8 The const Keyword](#key-const)
 
 [4. Modifier Types](#bonghia)
 
@@ -329,4 +329,112 @@ dear"
 "hello, " "d" "ear"
 ```
 ### 3.5 Defining Constants
+
+<a name='dinhnghiahang'></a>
+
+Có 2 cách để xác định hằng
+- Sử dụng `#define`
+- Sử dụng từ khóa `const`
+
+#### 3.5.1 Sử dụng **#define**
+
+<a name='define'></a>
+
+Có dạng
+
+`#define identifier value`
+
+Ví dụ
+
+```
+#include <iostream>
+using namespace std;
+#define LENGTH 10
+#define WIDTH 5
+#define NEWLINE '\n'
+int main()
+{
+	int area;
+	area=LENGTH * WIDTH;
+	cout << area;
+	cout <<NEWLINE;
+	return 0;
+}
+```
+
+#### 3.5.2 Sử dụng từ khóa **const**
+
+<a name='key-const'></a>
+
+Có dạng
+`const type variable = value;`
+
+Ví dụ
+
+```
+#include <iostream>
+using namespace std;
+int main()
+{
+	const int LENGTH = 10;
+	const int WIDTH = 5;
+	const char NEWLINE = '\n';
+	int area;
+	area = LENGTH * WIDTH;
+	cout << area;
+	cout << NEWLINE;
+	return 0;
+}
+```
+
+### 4. Modifier Types
+
+<a name='bonghia'></a>
+
+- C++ cho phép các kiểu dữ liệu như **char,int, double** có các bổ nghĩa trước nó. Bổ nghĩa được sử dụng để thay đổi ý nghĩa của các loại kiểu dữ liệu cơ sở để nó phù hợp hơn với nhu cầu của các tình huống khác nhau
+- Các bổ nghĩa của các kiểu dữ liệu được liệt kê dưới đây
+ - **signed**
+ - **unsigned**
+ - **long**
+ - **short**
+- Kiểu bổ nghĩa **signed, unsigned, long, short** có thể áp dụng cho kiểu số nguyên. Ngoài ra, **signed, unsigned** có thể áp dụng cho kiểu **char** và **long** có thể áp dụng cho **double**
+- Bổ nghĩa **signed, unsigned** cũng có thể sử dụng như tiền tố của **long** hoặc **short**
+VD: `unsigned long int`
+- C++ cho phép viết tắt để khai báo **unsigned, short, long** cho số nguyên. Bạn có thể sử dụng từ đơn như **unsigned, short, long** với kiểu **int**, kiểu **int** được ngụ ý. 
+
+```
+unsigned x;
+unsigned int y;
+```
+- Chương trình dưới đây giúp ta hiểu được sự khác biệt giữa bổ nghĩa **signed** và **unsigned** số nguyên
+
+```
+#include <iostream>
+using namespace std;
+ 
+/* This program shows the difference between
+ * signed and unsigned integers.
+*/
+int main() 
+{
+   short int i;           // a signed short integer
+   short unsigned int j;  // an unsigned short integer
+
+   j = 50000;
+   i = j;
+   cout << i << " " << j;
+   return 0;
+}
+```
+Sau khi chạy, chương trình sẽ có kết quả
+
+`-15536 50000`
+
+* Kết quả trên là vì mẫu bit đại diện *50000* ở kiểu **short unsigned int** được giải thích như *-15536* ở kiểu **short** *
+
+- Các dạng vòng cung cấp thông tin bổ sung cho các biến mà nó đứng trước
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task03/Images/img4.PNG">
+
+
 
