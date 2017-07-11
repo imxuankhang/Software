@@ -46,12 +46,19 @@ Ví dụ
 Có 7 kiểu cơ bản trong C++
 
 |-------type----------|-------keyword------|
+
 |-----bolean----------|------bool----------|
+
 |---character---------|-------char---------|
+
 |----integer----------|----------int-------|
+
 |floating point-------|-----float----------|
+
 |double floating point|-----double---------|
+
 |--valueles-----------|--------void--------|
+
 |wide character-------|-----wchar t--------|
 
 - Một số loại nâng cao:
@@ -63,21 +70,37 @@ Có 7 kiểu cơ bản trong C++
 - Bảng số lượng giá trị bộ nhớ, giá trị tối đa, giá trị tối thiểu của các loại biến 
 
 |-----type-----------|chiều rộng bit-------|độ dài--------------------|
+
 |---char-------------|1 byte---------------| -128 đến 127 hoặc 0->255-|
+
 |unsigned char-------|1 byte---------------| 0 -> 255 ----------------|
+
 |---signed char------|----1 byte-----------| -128 -> 127 -------------|
+
 |int ----------------|4 byte --------------|- 2 mũ 31 đến 2 mũ 31 ----|
+
 |unsigned int -------|4 byte---------------| 0 đến 2 mũ 32------------|
+
 |signed int----------|4 byte---------------|tương tự int -------------|
+
 |short int-----------|2 byte---------------|-32768 to 32767 ----------|
+
 |unsigned short int--|2 byte---------------|0 to 65535----------------|
+
 |signed short int----|2 byte---------------|tương tự short int--------|
+
 |long int------------|8 byte---------------|-3 mũ 32 đến 3 mũ 32------|
+
 |signed long int-----|8 byte---------------| tương tự long int -------|
+
 |unsigned long int---|8 byte --------------| 0  đến 2 mũ 64-----------|
+
 |float --------------|4 byte---------------| 7 digits-----------------|
+
 |double--------------|8 byte---------------| 15 digits----------------|
+
 |long double --------|8 byte---------------|15 digits-----------------|
+
 |wchar t-------------|2 or 4 byte----------| 1 wide character---------|
 
 - Kích thước của biến có thể khác với các giá trị được ghi trên bảng tùy vào trình biên dịch và máy tính bạn đang sử dụng 
@@ -85,7 +108,9 @@ Có 7 kiểu cơ bản trong C++
 
 `
 #include <iostream>
+
 using namespace std;
+
 int main()
 {
 	cout << "Size of char : " << sizeof(char) << endl;
@@ -120,6 +145,7 @@ Ví dụ, liệt kê các màu và biến *c* của kiểu màu. Cuối cùng, *
 
 ` 
 enum color { blue, red, black} c;
+
 c = blue;
 ` 
 Theo mặc định, giá trị đầu tiên của tên đầu tiên là 0, tiếp theo là 1,... nhưng ta có thể cho một tên một giá trị cụ thể như ví dụ dưới
