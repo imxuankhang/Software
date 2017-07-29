@@ -38,7 +38,7 @@
 
 [3.2 The Infinite Loop](#lapvohan)
 
-[4. C++ decision making statements]
+[4. C++ decision making statements](#tuyenboraquyetdinh)
 
 [4.1 The ?: Operator]
 
@@ -170,6 +170,149 @@ $./write
 <a name='lopmutable'></a>
 
 - **mutable** chỉ áp dụng cho đối tượng lớp. Nó cho phép một thành viên của một đối tượng ghi đè lên *constness*
+
+## 2. Operators in C++ (toán tử)
+
+<a name='toantu'></a>
+
+Toán tử là một kí hiệu cho phép trình biên dịch thực hiện các thao tác toán học hoặc logic. C++ có nhiều toán tử được xây dựng sẵn và cung cấp các kiểu toán tử sau đây:
+- Arithmetic Operators
+- Relational Operators 
+- Logical Operators
+- Bitwise Operators
+- Misc Operators
+Chương này sẽ kiểm tra từng toán tử số học, quan hệ, logic, toán tử trên bit, gán
+
+### 2.1 Arithmetic Operators
+
+<a name='toantuArithmetic'></a>
+
+Dưới đây là các toán tử số học được hỗ trợ bởi C++. Gỉa sử biến A được gán giá trị là 10 và biến B là 20
+
+<img src = "https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img1.PNG">
+
+### 2.2 Relational Operators
+
+<a name='toantuRelational'></a>
+
+Dưới đây là các toán tử quan hệ được hỗ trợ bởi C++. Gỉa sử biến A được gán giá trị là 10 và biến B là 20
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img2.PNG">
+
+### 2.3 Logical Operators 
+
+<a name='toantuLogical'></a>
+
+Dưới đây là các toán tử quan hệ được hỗ trợ bởi C++. Gỉa sử biến A được gán giá trị là 1 và biến B là 0
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img3.PNG">
+
+### 2.4 Bitwise Operators
+
+<a name='toantuBitwise'></a>
+
+Toán tử bitwise làm việc trên các bit và thực hiện các thao tác với bit. Các bảng giá trị của các phép toán trên bit như sau:
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img4.PNG">
+
+Nếu A=60 và B=13, dưới đây là định dạnh của A và B ở dạng nhị phân
+A = 00111100
+B = 00001101
+---------------
+A&B = 00001100 (phép AND)
+A|B = 00111101 (phép OR)
+A^B = 00110001 (phép XOR)
+~A = 11000011  (phép NOT)
+
+Các toán tử Bitwise được hỗ trợ bởi C++ được liệt kê dưới. Gỉa sử biến A=60 và B=13
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img5.PNG">
+
+### 2.5 Assignment Operators
+
+<a name='toantuAssignment'></a>
+
+Dưới đây là các toán tử gán được hỗ trợ bởi C++
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img6.PNG">
+
+### 2.6 Misc Operators
+
+<a name='toantuMisc'></a>
+
+Đây là một vài toán tử khác được hỗ trợ bởi C++ 
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img7.PNG">
+
+### 2.6 Operators Precedence in C++ (toán tử ưu tiên)
+
+<a name='toantuPrecedence'></a>
+
+- Thứ tự thực hiện các toán tử được xác định bởi nhóm các thuật ngữ trong một biểu thức. Một vài toán tử có độ ưu tiên cao hơn các toán tử khác. Ví dụ, toán tử nhân có độ ưu tiên cao hơn toán tử bổ sung
+- Ví dụ **x=7+3*2**, ở đây x có giá trị là 13, không phải 20 vì toán tử * được thực hiện trước toán tử +
+- Dưới đây là các toán tử đã được sắp xếp theo mức độ ưu tiên từ cao đến thấp
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img8.PNG">
+
+## 3. C++ loop types (vòng lặp)
+
+<a name='vonglap'></a>
+
+- Trong những tình huống, bạn cần thực hiện lại một khối mã vài lần. Khi đó tuyên bố vòng lặp sẽ cho phép thực hiện một nhóm các câu lệnh nhiều lần và dưới đây vòng lặp đưới khái niệm một cách tổng quát trong hầu hết các ngôn ngữ lập trình 
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img9.PNG">
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img10.PNG">
+
+### 3.1 Loop Control Statements
+
+<a name='caulenhdieukhien'></a>
+
+- Lệnh điều khiển vòng lặp thay đổi các thực hiện vòng lặp từ trình tự bình thường của nó
+- C++ hỗ trợ các câu lệnh điều khiển vòng lặp sau
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img11.PNG">
+
+### 3.2 Vòng lặp vô hạn
+
+<a name='lapvohan'></a>
+
+- Vòng lặp trở thành vòng lặp vô hạn nếu một điều kiện không bao giờ trở thành sai. Vòng lặp **for** thường được sử dụng cho mục đích này. Vì bạn có thể tạo một vòng lặp vô hạn bằng cách để biểu thức điều kiện trống
+```
+#include <iostream>
+using namespace std;
+ 
+int main () {
+
+   for( ; ; ) {
+      printf("This loop will run forever.\n");
+   }
+
+   return 0;
+}
+```
+**Lưu ý:** Bạn có thể thoát khỏi vòng lặp vô hạn bằng cách ấn tổ hợp phím Ctrl + C
+
+## 4. C++ decision making statements (câu lệnh điều kiện)
+
+<a name='caulenhdieukien'></a>
+
+- Các cấu trúc điều kiện  yêu cầu người lập trình chỉ định một hoặc nhiều điều kiện cần đánh giá hoặc kiểm tra bởi chương trình cùng với một câu lệnh. Câu lệnh sẽ được thực hiện nếu điều kiện được xác định là đúng, và tùy ý, các câu lệnh khác sẽ được thực hiện khi điều kiện được xác định là sai
+- Dưới đây là hình thức chung của một cấu trúc ra quyết định điển hình trong hầu hết các ngôn ngữ lập trình
+
+<img src = "https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img12.PNG">
+
+- C++ cung cấp dạng các câu lệnh điều kiện như sau
+
+<img src ="https://github.com/imxuankhang/Software/blob/master/Cpp/Task04/Images/img13.PNG">
+
+### 4.1 The ?: Operators
+
+- Có thể sử dụng toán tử ? thay thế cho câu lênh **if...else**. Nó có dạng tổng quát như sau
+`Exp1 ? Exp2 : Exp3;`
+- Trường hợp exp1,exp2,exp3 là biểu thức thì lưu ý việc sử dụng và vị trí dấu hai chấm
+- Gía trị của một biểu thức **?** được xác định như sau: exp1 được đánh giá, nếu nó là đúng thì exp2 được đánh giá và trở thành giá trị của biểu thức **?** biểu hiện. Nếu exp1 là sai thì exp3 được đánh giá và nó trở thành giá trị của biểu thức **?**
+
 
 
 
