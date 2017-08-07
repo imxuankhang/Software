@@ -12,6 +12,8 @@
 
 [1.3 Calling a Function](#calling)
 
+[1.4 Function Arguments](#arguments)
+
 [1.4 Default Values for Parameters](#default_values)
 
 [2. Numbers in C++](#number)
@@ -104,6 +106,58 @@ int max(int num1, int num2)  {
 ### 1.3 Calling a Function
 
 <a name='calling'></a>
+
+- Để sử dụng một hàm, bạn phải gọi hàm đó
+- Khi chương trình gọi hàm, chương trình điều khiển sẽ truyền đến hàm được gọi. Hàm có thể trả về giá trị là giá trị của câu lệnh **return()** hoặc không trả về giá trị nào nếu như *return type* là **void()**
+Ví dụ:
+```
+#include <iostream>
+using namespace std;
+ 
+// function declaration
+int max(int num1, int num2);
+ 
+int main () {
+   // local variable declaration:
+   int a = 100;
+   int b = 200;
+   int ret;
+ 
+   // calling a function to get max value.
+   ret = max(a, b);
+ 
+   cout << "Max value is : " << ret << endl;
+ 
+   return 0;
+}
+ 
+// function returning the max between two numbers
+int max(int num1, int num2)  {
+   // local variable declaration
+   int result;
+ 
+   if (num1 > num2)
+      result = num1;
+   else
+      result = num2;
+ 
+   return result; 
+}
+```
+Hàm *max()* được giữ lại cùng với hàm **main()** đến cuối chương trình và khi kết thúc chương trình sẽ cho ra kết quả như sau:
+`Max value is : 200`
+
+### 1.4 Function Arguments
+
+<a name='arguments'></a>
+
+- Nếu một hàm sử dung arguments, nó phải khai báo biến mà được chấp nhận các giá trị của các arguments. Các biến này được gọi là các tham số chính thức của hàm 
+- Các tham số chính thức hoạt động giống như các biến cục bộ bên trong hàm
+- Khi gọi một hàm, có 2 cách mà arguments có thể được truyền đến một hàm
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG1.PNG">
+
+- Mặc định, C++ sử dụng *call by type* để truyền arguments. Nói chung, điều này có nghĩa là code trong hàm không thể thay đổi arguments được sử dụng để gọi hàm và ví dụ được đề cập ở trên khi gọi hàm *max()* được sử dụng cùng phương pháp 
 
 
 
