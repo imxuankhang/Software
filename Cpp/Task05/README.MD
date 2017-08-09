@@ -151,13 +151,190 @@ Hàm *max()* được giữ lại cùng với hàm **main()** đến cuối chư
 
 <a name='arguments'></a>
 
-- Nếu một hàm sử dung arguments, nó phải khai báo biến mà được chấp nhận các giá trị của các arguments. Các biến này được gọi là các tham số chính thức của hàm 
-- Các tham số chính thức hoạt động giống như các biến cục bộ bên trong hàm
-- Khi gọi một hàm, có 2 cách mà arguments có thể được truyền đến một hàm
+- Khi gọi một hàm, có 2 cách mà đối số có thể được truyền đến một hàm
 
 <img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG1.PNG">
 
-- Mặc định, C++ sử dụng *call by type* để truyền arguments. Nói chung, điều này có nghĩa là code trong hàm không thể thay đổi arguments được sử dụng để gọi hàm và ví dụ được đề cập ở trên khi gọi hàm *max()* được sử dụng cùng phương pháp 
+- Mặc định, C++ sử dụng *call by type* hay truyền tham trị để truyền đối số. Nói chung, điều này có nghĩa là code trong hàm không thể thay đổi đối số được sử dụng để gọi hàm và ví dụ được đề cập ở trên khi gọi hàm *max()* được sử dụng cùng phương pháp 
+- Ngoài truyền tham trị còn có 2 cách truyền đối số khác là tham chiếu và sử dụng con trỏ
+
+### 1.5 Default Values for Parameters
+
+<a name='default_values'></a>
+
+- Bạn có thể chỉ định một giá trị mặc định cho mỗi tham số, giá trị này sẽ được sử dụng nếu đối số tương ứng để trống khi gọi hàm
+- Điều này được thực hiện bằng cách sử dụng toán tử gán (gán giá trị cho đối số trong hàm). Nếu giá trị cho đối số không được truyền khi hàm được gọi thì giá trị mặc định sẽ được sử dụng. Nhưng nếu đối số được truyền giá trị thì giá trị mặc định sẽ được bỏ qua không dùng. 
+Ví dụ:
+```
+#include <iostream>
+using namespace std;
+ 
+int sum(int a, int b=20) {
+   int result;
+
+   result = a + b;
+  
+   return (result);
+}
+
+int main () {
+   // local variable declaration:
+   int a = 100;
+   int b = 200;
+   int result;
+ 
+   // calling a function to add the values.
+   result = sum(a, b);
+   cout << "Total value is :" << result << endl;
+
+   // calling a function again as follows.
+   result = sum(a);
+   cout << "Total value is :" << result << endl;
+ 
+   return 0;
+}
+```
+Kết quả
+```
+Total value is :300
+Total value is :120
+```
+
+## 2. Numbers in C++
+
+<a name='number'></a>
+
+Thông thường, khi làm việc với số, ta thường sử dụng các dạng dữ liệu truyền thống như **int, short, long, float...** 
+
+### 2.1 Defining Numbers in C++
+
+<a name='defining'></a>
+
+- Dưới đây là ví dụ của các loại số khác nhau trong C++
+```
+#include <iostream>
+using namespace std;
+ 	
+int main () {
+   // number definition:
+   short  s;
+   int    i;
+   long   l;
+   float  f;
+   double d;
+   
+   // number assignments;
+   s = 10;      
+   i = 1000;    
+   l = 1000000; 
+   f = 230.47;  
+   d = 30949.374;
+   
+   // number printing;
+   cout << "short  s :" << s << endl;
+   cout << "int    i :" << i << endl;
+   cout << "long   l :" << l << endl;
+   cout << "float  f :" << f << endl;
+   cout << "double d :" << d << endl;
+ 
+   return 0;
+}
+```
+Kết quả:
+```short  s :10
+int    i :1000
+long   l :1000000
+float  f :230.47
+double d :30949.4
+```
+
+### 2.2 Math Operations in C++
+
+<a name='toan_tu'></a>
+
+- Ngoài các hàm tự tạo, C++ cũng bao gồm một số hàm hữu dụng mà ta có thể sử dụng. Một số hàm có sẵn trong thư viện chuẩn C/C++ và được gọi là hàm xây dựng sẵn.
+- C++ có một tập các toán tử số học phong phú. Dưới đây là các hàm toán tử số học có sẵn 
+- Để sử dụng các hàm này ta cần khai báo thư việc **<cmath>**
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG2.PNG">
+Ví dụ:
+```
+#include <iostream>
+#include <cmath>
+using namespace std;
+ 					
+int main () {
+   // number definition:
+   short  s = 10;
+   int    i = -1000;
+   long   l = 100000;
+   float  f = 230.47;
+   double d = 200.374;
+
+   // mathematical operations;
+   cout << "sin(d) :" << sin(d) << endl;
+   cout << "abs(i)  :" << abs(i) << endl;
+   cout << "floor(d) :" << floor(d) << endl;
+   cout << "sqrt(f) :" << sqrt(f) << endl;
+   cout << "pow( d, 2) :" << pow(d, 2) << endl;
+ 
+   return 0;
+}
+```
+Kết quả:
+```
+sign(d) :-0.634939
+abs(i)  :1000
+floor(d) :200
+sqrt(f) :15.1812
+pow( d, 2 ) :40149.7
+```
+
+### 2.3 Random Numbers in C++
+
+<a name='random_numbers'></a>
+
+- Trong nhiều trường hợp, ta sẽ cần sử dụng những số được lựa chọn tùy ý. Có 2 hàm hỗ trợ cho việc này đó là **rand()** và **srand()**
+- Dưới đây là ví dụ đơn giản
+```
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+ 
+int main () {
+   int i,j;
+ 
+   // set the seed
+   srand( (unsigned)time( NULL ) );
+
+   /* generate 10  random numbers. */
+   for( i = 0; i < 10; i++ ) {
+      // generate actual random number
+      j= rand();
+      cout <<" Random Number : " << j << endl;
+   }
+
+   return 0;
+}
+```
+Kết quả:
+```
+ Random Number : 1748144778
+ Random Number : 630873888
+ Random Number : 2134540646
+ Random Number : 219404170
+ Random Number : 902129458
+ Random Number : 920445370
+ Random Number : 1319072661
+ Random Number : 257938873
+ Random Number : 1256201101
+ Random Number : 580322989
+```
+
+## 3. C++ Arrays
+
+<a name='mang'>
 
 
 
