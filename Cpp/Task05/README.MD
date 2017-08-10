@@ -336,5 +336,100 @@ Kết quả:
 
 <a name='mang'>
 
+- C++ cung cấp một cấu trúc dữ liệu gọi là mảng, mảng chứa các phần tử cùng loại. 
+- Thay vì khai báo từng biến như so0, so1, so2,....,so99; ta khai báo một mảng *so[100]* và sử dụng tuần tự các chỉ số [0],[1],...,[99] để biểu diễn. Một biến trong mảng được truy xuất bởi một tên mảng đi kèm với chỉ số của biến đó. Mảng bao gồm các địa chỉ bộ nhớ liên tiếp. Phần tử đầu có địa chỉ thấp nhất, phần tử cuối có địa chỉ cao nhất
+
+### 3.1 Declaring Arrays
+
+<a name='declaring'></a>
+
+- Để khai báo một mảng, ta dùng cú pháp sau:
+`type arrayName [arraySize];`
+- *arraySize* phải lớn hơn 0 và *type* là các dạng dữ liệu cho phép bởi C++. Chỉ số trong mảng được đánh dấu bắt đầu từ 0
+
+### 3.2 Initializing Arrays
+
+<a name='initializing'></a>
+
+- Bạn có thể khởi tạo từng giá trị một trong mảng
+Ví dụ
+```
+balance[5]=50.0;
+```
+Hoặc cũng có thể khởi tạo giá trị từ lúc khai báo mảng như sau
+```
+double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+```
+Số giá trị trong dấu {} phải vừa khớp với giá trị trong trường *arraySize*. Nếu ta để giá trị trong dấu [] là trống thì mảng sẽ khởi tạo ra số phần tử bằng với số giá trị mà ta khởi tạo
+- Dưới đây là biểu diễn hình ảnh của một mảng
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG6.PNG">
+
+### 3.3 Accessing Array Elements
+
+<a name='accessing'></a>
+
+- Như đã nói ở trên các phần tử trong mảng được truy xuất bằng cách *arrayName[stt]*
+Ví dụ: `double salary = balance[5];`
+Câu lệnh trên sẽ lấy phần tử thứ 6 và gán cho biến *double salary* 
+- Ví dụ dưới đây sử dụng tất cả các khái niệm đã nói ở trên
+```
+#include <iostream>
+using namespace std;
+ 
+#include <iomanip>
+using std::setw;
+ 
+int main () {
+   int n[ 10 ]; // n is an array of 10 integers
+ 
+   // initialize elements of array n to 0          
+   for ( int i = 0; i < 10; i++ ) {
+      n[ i ] = i + 100; // set element at location i to i + 100
+   }
+	
+   cout << "Element" << setw( 13 ) << "Value" << endl;
+ 
+   // output each array element's value                      
+   for ( int j = 0; j < 10; j++ ) {
+      cout << setw( 7 )<< j << setw( 13 ) << n[ j ] << endl;
+   }
+ 
+   return 0;
+}
+```
+Chương trình trên có sử dụng hàm **setw()** để định dạng đầu ra. Và đây là kết quả
+```
+Element        Value
+      0          100
+      1          101
+      2          102
+      3          103
+      4          104
+      5          105
+      6          106
+      7          107
+      8          108
+      9          109
+```
+
+### 3.4 C++ Arrays in Detail
+
+<a name='detail'></a>
+
+- Mảng rất quan trọng trong hầu hết các ngôn ngữ lập trình. Có một số khái niệm sau cần nắm rõ
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG3.PNG">
+
+- Mảng đa chiều: ví dụ đơn giản nhất là mảng 2 chiều
+- Con trỏ đến một mảng: có thể tạo ra một con trỏ trỏ tới vị trí đầu tiên trong mảng bằng cách chỉ định tên mảng mà không cần chỉ mục nào
+- Truyền mảng đến hàm: có thể truyền con trỏ của hàm đến một mảng bằng cách xác định tên mảng mà không cần chỉ mục nào
+- Trả lại mảng từ hàm: C++ cho phép hàm trả về một mảng
+
+## 4. C++ Strings
+
+<a name='chuoi'></a>
+
+
 
 
