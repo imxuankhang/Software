@@ -36,7 +36,7 @@
 
 [4. C++ Strings (chuỗi)](#chuoi)
 
-[4.1 The C-Style Character Strings](#charaters_string)
+[4.1 The C-Style Character Strings](#characters_string)
 
 [4.2 The String Class in C++](#string_class)
 
@@ -255,6 +255,7 @@ double d :30949.4
 - Ngoài các hàm tự tạo, C++ cũng bao gồm một số hàm hữu dụng mà ta có thể sử dụng. Một số hàm có sẵn trong thư viện chuẩn C/C++ và được gọi là hàm xây dựng sẵn.
 - C++ có một tập các toán tử số học phong phú. Dưới đây là các hàm toán tử số học có sẵn 
 - Để sử dụng các hàm này ta cần khai báo thư việc **<cmath>**
+
 <img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG2.PNG">
 Ví dụ:
 ```
@@ -370,7 +371,7 @@ double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 Số giá trị trong dấu {} phải vừa khớp với giá trị trong trường *arraySize*. Nếu ta để giá trị trong dấu [] là trống thì mảng sẽ khởi tạo ra số phần tử bằng với số giá trị mà ta khởi tạo
 - Dưới đây là biểu diễn hình ảnh của một mảng
 
-<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG6.PNG">
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG3.PNG">
 
 ### 3.3 Accessing Array Elements
 
@@ -431,7 +432,7 @@ Element        Value
 
 - Mảng rất quan trọng trong hầu hết các ngôn ngữ lập trình. Có một số khái niệm sau cần nắm rõ
 
-<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG3.PNG">
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG4.PNG">
 
 - Mảng đa chiều: ví dụ đơn giản nhất là mảng 2 chiều
 - Con trỏ đến một mảng: có thể tạo ra một con trỏ trỏ tới vị trí đầu tiên trong mảng bằng cách chỉ định tên mảng mà không cần chỉ mục nào
@@ -442,6 +443,128 @@ Element        Value
 
 <a name='chuoi'></a>
 
+- C++ cung cấp 2 kiểu trình bày chuỗi như sau:
+	- Chuỗi theo phong cách của ngôn ngữ C
+	- Lớp chuỗi được giới thiệu trong C++ chuẩn
 
+### 4.1 The C-style character strings
 
+<a name='characters_string'></a>
+
+- Dạng này bắt nguồn từ ngôn ngữ lập trình C và tiếp tục được hỗ trỡ trong C++. Chuỗi thực chất là mảng một chiều của các ký tự mà kết thúc bởi ký tự **null** '\0'
+- Dưới đây khai báo và khởi tạo một chuỗi bao gồm một từ "hello". Kích thước của mảng các kí tự bao gồm một chuỗi phải nhiều hơn số lượng các ký tự trong từ khóa "hello" để giá trị **null** tồn tại
+
+`char greeting[6] = {'H','e','l','l','o','\0'};`
+
+- Nếu bạn sử dụng chuỗi, bạn có thể viết như sau:
+
+`char greeting[] = "Hello";`
+
+- Dưới đây là phần biểu diễn ô nhớ cho đoạn chuỗi trong C/C++
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG5.PNG">
+
+- Trên thực tế, trình biên dịch C++ sẽ tự động thêm '\0' vào vị trí cuối cùng của chuỗi khi nó khởi tạo mảng. Hãy thử in chuỗi trên:
+
+```
+#include <iostream>
+
+using namespace std;
+
+int main () {
+   char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+
+   cout << "Greeting message: ";
+   cout << greeting << endl;
+
+   return 0;
+}
+```
+
+Kết quả:
+
+`Greeting message:Hello`
+
+- C++ hỗ trợ nhiều hàm đa dạng để thao tác các chuỗi kết thúc là null
+
+<img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG6.PNG">
+
+Ví dụ:
+```
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main () {
+   char str1[15] = "Hello";
+   char str2[15] = "World";
+   char str3[15];
+   int  len ;
+
+   // copy str1 into str3
+   strcpy( str3, str1);
+   cout << "strcpy( str3, str1) : " << str3 << endl;
+
+   // concatenates str1 and str2
+   strcat( str1, str2);
+   cout << "strcat( str1, str2): " << str1 << endl;
+
+   // total lenghth of str1 after concatenation
+   len = strlen(str1);
+   cout << "strlen(str1) : " << len << endl;
+
+   return 0;
+}
+```
+Kết quả:
+```
+strcpy( str3, str1) : Hello
+strcat( str1, str2): HelloWorld
+strlen(str1) : 10
+The String 
+```
+
+### 4.2 The String Class in C++
+
+<a name='string_class'></a>
+
+- Thư viện chuẩn C++ cung cấp một kiểu lớp **string** hỗ trợ tất cả các hoạt động liên quan đến chuỗi như trên và bổ sung thêm một số chức năng. Chúng ta sẽ học lớp này trong bài **Thư viện chuẩn C++** nhưng bây giờ hãy cùng nhau kiểm tra ví dụ sau:
+- Tại thời điểm này, bạn có thể không hiểu ví dụ trên vì cho đến nay chúng ta chưa thảo luận về **Classes and Objects (Lớp và Đối tượng)**. Vì vậy bạn quan sát và ghi nhớ nó tới khi bạn đã hiểu các khái niệm về Hướng đối tượng được trình bày ở những bài học sau
+
+```
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main () {
+   string str1 = "Hello";
+   string str2 = "World";
+   string str3;
+   int  len ;
+
+   // copy str1 into str3
+   str3 = str1;
+   cout << "str3 : " << str3 << endl;
+
+   // concatenates str1 and str2
+   str3 = str1 + str2;
+   cout << "str1 + str2 : " << str3 << endl;
+
+   // total lenghth of str3 after concatenation
+   len = str3.size();
+   cout << "str3.size() :  " << len << endl;
+
+   return 0;
+}
+```
+ 
+Kết quả khi thực thi: 
+ 
+ ```
+ str3 : Hello
+ str1 + str2 : HelloWorld
+ str3.size() :  10
+ ```
 
