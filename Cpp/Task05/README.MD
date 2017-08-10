@@ -295,6 +295,7 @@ pow( d, 2 ) :40149.7
 
 - Trong nhiều trường hợp, ta sẽ cần sử dụng những số được lựa chọn tùy ý. Có 2 hàm hỗ trợ cho việc này đó là **rand()** và **srand()**
 - Dưới đây là ví dụ đơn giản
+
 ```
 #include <iostream>
 #include <ctime>
@@ -318,7 +319,9 @@ int main () {
    return 0;
 }
 ```
+
 Kết quả:
+
 ```
  Random Number : 1748144778
  Random Number : 630873888
@@ -353,13 +356,17 @@ Kết quả:
 
 - Bạn có thể khởi tạo từng giá trị một trong mảng
 Ví dụ
+
 ```
 balance[5]=50.0;
 ```
+
 Hoặc cũng có thể khởi tạo giá trị từ lúc khai báo mảng như sau
+
 ```
 double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 ```
+
 Số giá trị trong dấu {} phải vừa khớp với giá trị trong trường *arraySize*. Nếu ta để giá trị trong dấu [] là trống thì mảng sẽ khởi tạo ra số phần tử bằng với số giá trị mà ta khởi tạo
 - Dưới đây là biểu diễn hình ảnh của một mảng
 
@@ -370,9 +377,13 @@ Số giá trị trong dấu {} phải vừa khớp với giá trị trong trư�
 <a name='accessing'></a>
 
 - Như đã nói ở trên các phần tử trong mảng được truy xuất bằng cách *arrayName[stt]*
-Ví dụ: `double salary = balance[5];`
+Ví dụ:
+
+ `double salary = balance[5];`
+
 Câu lệnh trên sẽ lấy phần tử thứ 6 và gán cho biến *double salary* 
 - Ví dụ dưới đây sử dụng tất cả các khái niệm đã nói ở trên
+
 ```
 #include <iostream>
 using namespace std;
@@ -399,6 +410,7 @@ int main () {
 }
 ```
 Chương trình trên có sử dụng hàm **setw()** để định dạng đầu ra. Và đây là kết quả
+
 ```
 Element        Value
       0          100
