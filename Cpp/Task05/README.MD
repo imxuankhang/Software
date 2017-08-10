@@ -254,10 +254,12 @@ double d :30949.4
 
 - Ngoài các hàm tự tạo, C++ cũng bao gồm một số hàm hữu dụng mà ta có thể sử dụng. Một số hàm có sẵn trong thư viện chuẩn C/C++ và được gọi là hàm xây dựng sẵn.
 - C++ có một tập các toán tử số học phong phú. Dưới đây là các hàm toán tử số học có sẵn 
-- Để sử dụng các hàm này ta cần khai báo thư việc **<cmath>**
+- Để sử dụng các hàm này ta cần khai báo thư viện **cmath**
 
 <img src="https://github.com/imxuankhang/Software/blob/master/Cpp/Task05/Images/IMG2.PNG">
+
 Ví dụ:
+
 ```
 #include <iostream>
 #include <cmath>
@@ -281,7 +283,9 @@ int main () {
    return 0;
 }
 ```
+
 Kết quả:
+
 ```
 sign(d) :-0.634939
 abs(i)  :1000
