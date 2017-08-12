@@ -307,4 +307,16 @@ Time: 22: 44:59
 
 <a name='input&output'></a>
 
+- Thư viện chuản C++ cung cấp nhiều khả năng input/output và sẽ được thấy trong các chương tiếp theo. Chương này sẽ thảo luận các hoạt động I/O cơ bản nhất và phổ biến được yêu cầu cho lập trình C++
+- I/O trong C/C++ diễn ra trong các Stream(dòng) - đó là dãy các bye. Nếu các byte truyền từ một thiết bị như bàn phím, ổ đĩa hoặc một kết nối mạng...đến bộ nhớ chính, thì điều này được gọi là hoạt động đầu vào và nếu các byte truyền từ bộ nhớ chính tới một thiết bị như màn hình, máy in, ổ đĩa hay kết nối mạng...thì được gọi là hoạt động đầu ra...
+
+### 4.1 Header file cho I/O
+
+<a name='headerfile'></a>
+
+<img src = "https://github.com/imxuankhang/Software/blob/master/Cpp/Task06/Images/IMG4.PNG">
+
+### 4.2 Standard Output Stream trong C++(cout)
+
+<a name='cout'>
 
