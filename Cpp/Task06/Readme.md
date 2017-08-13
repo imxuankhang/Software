@@ -36,6 +36,18 @@
 
 [4.5 Standard Log Stream trong C++(clog)](#clog)
 
+[5. C++ Data Structures(cấu trúc)](#cautruc)
+
+[5.1 Defining a Structure(định nghĩa)](#dinhnghia)
+
+[5.2 Accessing Structure Members(truy cập thành viên)](#truycapthanhvien)
+
+[5.3 Structures as Function Arguments(cấu trúc dưới dạng tham số hàm)](#cautrucduoidangthamsoham)
+
+[5.4 Pointers to Structures(con trỏ đến cấu trúc)](#controdencautruc)
+
+[5.5 The typedef Keyword(từ khóa **typedef**)](#tukhoatypedef)
+
 ## 1. C++ Pointers(con trỏ)
 
 <a name='contro'></a>
@@ -320,3 +332,357 @@ Time: 22: 44:59
 
 <a name='cout'>
 
+- Đối tượng được xác định trước **cout** là một thể hiện của lớp **ostream** dùng để kết nối với thiết bị đầu ra chuẩn (thường là màn hình). **cout** được sử dụng kết hợp với toán tử chèn, được viết bằng << như ví dụ sau:
+
+```
+#include <iostream>
+ 
+using namespace std;
+ 
+int main( ) {
+   char str[] = "Hello C++";
+ 
+   cout << "Value of str is : " << str << endl;
+}
+```
+Sau khi biên dịch và chạy chương trình sẽ được kết quả sau
+```
+Value of str is : Hello C++
+```
+
+- Trình biên dịch C++ cũng xác định kiểu dữ liểu của biến để được output và chọn toán tử chèn thích hợp để hiển thị giá trị. Toán tử << được nạp chồng (overload) tới dữ liệu đầu ra kiểu *integer, float, double, string* và giá trị con trỏ có sẵn
+- Toán tử chèn << có thể được sử dụng nhiều hơn một lần trong một câu lệnh như hiển thị ở trên và **endl** được sử dụng để thêm một dòng mới tại cuối dòng đó
+
+### 4.3 Standard Input Stream trong C++(cin)
+
+<a name='cin'></a>
+
+- Đối tượng được xác định trước **cin** là một thể hiện của lớp **istream** dùng để đính kèm đến thiết bị đầu vào chuẩn (như bàn phím). **Cin** được sử dụng kết hợp với toán tử trích dẫn >> như ví dụ sau
+```
+#include <iostream>
+ 
+using namespace std;
+ 
+int main( ) {
+   char name[50];
+ 
+   cout << "Please enter your name: ";
+   cin >> name;
+   cout << "Your name is: " << name << endl;
+ 
+}
+```
+
+Khi biên dịch và thực thi chương trình trên, nó sẽ nhắc bạn chèn *name*. Khi bạn chèn *name* và nhấn enter sẽ được kết quả sau
+```
+Please enter your name: cplusplus
+Your name is: cplusplus
+```
+
+- Trình biên dịch C++ cũng xác định kiểu dữ liệu của biến được chèn và chọn toán tử trích dẫn thích hợp đễ trích giá trị và lưu trữ nó trong các biến đã cung cấp 
+- Toán tử trích >> cũng được sử dụng nhiều hơn một lần trong một câu lệnh. Để yêu cầu nhiều hơn một dữ liệu chuẩn, ta có thể sử dụng
+`cin >> name >> age;`
+Điều này tương đương với câu sau
+```
+cin >> name;
+cin >> age;
+```
+
+### 4.3 Standard Error Stream trong C++(cerr)
+
+<a name='cerr'></a>
+
+- Đối tượng xác định trước **cerr** là một thể hiện của lớp **ostream** dùng để đính kèm đến thiết bị báo lỗi chuẩn, cũng là màn hình nhưng đối tượng **cerr** không được đệm và mỗi dòng chèn vào **cerr** sẽ xuất ra ngay lập tức
+- **Cerr** cũng được sử dụng kết hợp với toán tử chèn như ví dụ sau đây:
+```
+#include <iostream>
+ 
+using namespace std;
+ 
+int main( ) {
+   char str[] = "Unable to read....";
+ 
+   cerr << "Error message : " << str << endl;
+}
+```
+Kết quả
+`Error message : Unable to read....`
+
+### 4.4 Standard Log Stream trong C++(clog)
+
+<a name='clog'></a>
+
+- Đối tượng xác định trước **clog** là một thể hiện của lớp **ostream** được xem như đính kèm với thiết bị lỗi chuẩn, cũng là màn hình hiển thị nhưng đối tượng **clog** là được đệm. Nghĩa là mỗi sự chèn tới **clog** làm đầu ra được giữ lại trong bộ đệm *buffer* tới khi bộ đệm đầy hoặc khi bộ đệm bị flush (chuyển từ đệm ra đĩa)
+- Đối tượng **clog** trong C++ cũng sử dụng kết hợp với toán tử chèn, như ví dụ sau:
+```
+#include <iostream>
+ 
+using namespace std;
+ 
+int main( ) {
+   char str[] = "Unable to read....";
+ 
+   clog << "Error message : " << str << endl;
+}
+```
+Kết quả
+`Error message : Unable to read.....`
+
+- Bạn không thấy bất kì điểm khác nhau nào giữa **cout,cin,cerr,clog** với những ví dụ nhỏ này. Nhưng trong khi viết và thực thi các chương trình lớn, thì sự khác nhau này trở nên rõ ràng hơn. Vì thế, nó là bài thực hành tốt cho bạn để hiển thị thong báo lỗi sử dụng **cerr** và khi hiển thị các thông báo log khác, thì **clog** nên được sử dụng
+
+## 5. C++ Data Structures(cấu trúc)
+
+<a name='cautruc'></a>
+
+- Các mảng trong C/C++ cho phép bạn giữ giáp trị của một vài thành viên cùng kiểu dữ liệu. Nhưng structure - cấu trúc là một loại dữ liệu khác trong ngôn ngữ lập trình C/C++, cho phép bạn kết hợp các kiểu dữ liệu khác nhau
+- Các cấu trúc được sử dụng để biểu thị một bản ghi, giả sử muốn lưu trữ giá trị của một quyển sách trong thư viện. Ta có thể lưu trữ các thuộc tính của sách sau:
+	- Tiêu đề
+	- Tác giả
+	- Chủ đề
+	- Book ID
+
+[5.1 Defining a Structure(định nghĩa)](#dinhnghia)
+- Để định nghĩa một cấu trúc, bạn phải sử dụng câu lệnh **struct**. Câu lệnh struct định nghĩa một kiểu dữ liệu mới, với hơn một thành viên trong chương trình của bạn. Định dạng của câu lệnh struct như sau:
+```
+struct [structure tag] {
+   member definition;
+   member definition;
+   ...
+   member definition;
+} [one or more structure variables];  
+```
+
+- "structure tag" có thể tùy chọn và một thành viên định nghĩa là các biến thường định nghĩa như int i, float j hay một định nghĩa biến khác. Tại phần cuối của định nghĩa cấu trúc, trước dấu chấm phẩy, bạn nên xác định một hay nhiều biến cấu trúc(tùy chọn). Ví dụ sau là khai báo cấu trúc Book
+```
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+}book;  
+```
+
+5.2 Accessing Structure Members(truy cập thành viên)
+
+<a name='truycapthanhvien'></a>
+
+- Để truy cập bất kì thành viên nào của một cấu trúc, chúng ta dùng toán tử truy cập phần tử (.). Toán tử truy cập phần tử là mã hóa là dấu chấm giữa tên biến cấu trúc và phần tử cấu trúc muốn truy cập. Ta phải sử dụng từ khóa **struct** để định nghĩa dạng biến của cấu trúc. Dưới đây là ví dụ cho cách sử dụng cấu trúc trong C++
+```
+#include <iostream>
+#include <cstring>
+ 
+using namespace std;
+ 
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+};
+ 
+int main( ) {
+   struct Books Book1;        // Declare Book1 of type Book
+   struct Books Book2;        // Declare Book2 of type Book
+ 
+   // book 1 specification
+   strcpy( Book1.title, "Learn C++ Programming");
+   strcpy( Book1.author, "Chand Miyan"); 
+   strcpy( Book1.subject, "C++ Programming");
+   Book1.book_id = 6495407;
+
+   // book 2 specification
+   strcpy( Book2.title, "Telecom Billing");
+   strcpy( Book2.author, "Yakit Singha");
+   strcpy( Book2.subject, "Telecom");
+   Book2.book_id = 6495700;
+ 
+   // Print Book1 info
+   cout << "Book 1 title : " << Book1.title <<endl;
+   cout << "Book 1 author : " << Book1.author <<endl;
+   cout << "Book 1 subject : " << Book1.subject <<endl;
+   cout << "Book 1 id : " << Book1.book_id <<endl;
+
+   // Print Book2 info
+   cout << "Book 2 title : " << Book2.title <<endl;
+   cout << "Book 2 author : " << Book2.author <<endl;
+   cout << "Book 2 subject : " << Book2.subject <<endl;
+   cout << "Book 2 id : " << Book2.book_id <<endl;
+
+   return 0;
+}
+```
+
+Khi biên dịch ta được kết quả như sau
+```
+Book 1 title : Learn C++ Programming
+Book 1 author : Chand Miyan
+Book 1 subject : C++ Programming
+Book 1 id : 6495407
+Book 2 title : Telecom Billing
+Book 2 author : Yakit Singha
+Book 2 subject : Telecom
+Book 2 id : 6495700
+```
+
+5.3 Structures as Function Arguments(cấu trúc dưới dạng tham số hàm)
+
+<a name='cautrucduoidangthamsoham'></a>
+
+- Bạn có thể truyền một cấu trúc như một tham số hàm theo cách tương tự như bạn truyền biến hay con trỏ. Bạn nên truyền biến cấu trúc theo cách tương tự như bạn truyền trong ví dụ ở trên
+```
+#include <iostream>
+#include <cstring>
+ 
+using namespace std;
+void printBook( struct Books book );
+
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+};
+ 
+int main( ) {
+   struct Books Book1;        // Declare Book1 of type Book
+   struct Books Book2;        // Declare Book2 of type Book
+ 
+   // book 1 specification
+   strcpy( Book1.title, "Learn C++ Programming");
+   strcpy( Book1.author, "Chand Miyan"); 
+   strcpy( Book1.subject, "C++ Programming");
+   Book1.book_id = 6495407;
+
+   // book 2 specification
+   strcpy( Book2.title, "Telecom Billing");
+   strcpy( Book2.author, "Yakit Singha");
+   strcpy( Book2.subject, "Telecom");
+   Book2.book_id = 6495700;
+ 
+   // Print Book1 info
+   printBook( Book1 );
+
+   // Print Book2 info
+   printBook( Book2 );
+
+   return 0;
+}
+
+void printBook( struct Books book ) {
+   cout << "Book title : " << book.title <<endl;
+   cout << "Book author : " << book.author <<endl;
+   cout << "Book subject : " << book.subject <<endl;
+   cout << "Book id : " << book.book_id <<endl;
+}
+```
+
+Khi biên dịch và thực thi sẽ cho kết quả như dưới đây:
+```
+Book title : Learn C++ Programming
+Book author : Chand Miyan
+Book subject : C++ Programming
+Book id : 6495407
+Book title : Telecom Billing
+Book author : Yakit Singha
+Book subject : Telecom
+Book id : 6495700
+```
+
+5.4 Pointers to Structures(con trỏ đến cấu trúc)
+
+<a name='controdencautruc'></a>
+
+- Ta có thể định nghĩa con trỏ đến cấu trúc theo cách tương tự như ta định nghĩa con trỏ đến biến bất kì
+`struct Books *struct_pointer;`
+
+- Bây giờ, ta có thể lưu trữ địa chỉ của biến cấu trúc trong định nghĩa biến con trỏ ở trên. Để tìm địa chỉ của biến cấu trúc, đặt toán tử & trước tên cấu trúc như sau:
+`struct_pointer = &Book1;`
+
+- Để truy cập phần tử của cấu trúc sử dụng con trỏ đến cấu trúc này, bạn phải sử dụng toán tử -> như dưới đây
+`struct pointer -> title;`
+
+- Giờ ta hãy thử viết lại ví dụ ở trên bằng cách sử dụng con trỏ cấu trúc
+```
+#include <iostream>
+#include <cstring>
+ 
+using namespace std;
+void printBook( struct Books *book );
+
+struct Books {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+};
+ 
+int main( ) {
+   struct Books Book1;        // Declare Book1 of type Book
+   struct Books Book2;        // Declare Book2 of type Book
+ 
+   // Book 1 specification
+   strcpy( Book1.title, "Learn C++ Programming");
+   strcpy( Book1.author, "Chand Miyan"); 
+   strcpy( Book1.subject, "C++ Programming");
+   Book1.book_id = 6495407;
+
+   // Book 2 specification
+   strcpy( Book2.title, "Telecom Billing");
+   strcpy( Book2.author, "Yakit Singha");
+   strcpy( Book2.subject, "Telecom");
+   Book2.book_id = 6495700;
+ 
+   // Print Book1 info, passing address of structure
+   printBook( &Book1 );
+
+   // Print Book2 info, passing address of structure
+   printBook( &Book2 );
+
+   return 0;
+}
+
+// This function accept pointer to structure as parameter.
+void printBook( struct Books *book ) {
+   cout << "Book title : " << book->title <<endl;
+   cout << "Book author : " << book->author <<endl;
+   cout << "Book subject : " << book->subject <<endl;
+   cout << "Book id : " << book->book_id <<endl;
+}
+```
+
+Kết quả
+```
+Book title : Learn C++ Programming
+Book author : Chand Miyan
+Book subject : C++ Programming
+Book id : 6495407
+Book title : Telecom Billing
+Book author : Yakit Singha
+Book subject : Telecom
+Book id : 6495700		
+```
+
+5.5 The typedef Keyword(từ khóa **typedef**)
+
+<a name='tukhoatypedef'></a>
+
+- Có một cách dễ dàng hơn để định nghĩa một cấu trúc. Ví dụ:
+```
+typedef struct {
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+}Books;
+```
+
+- Bây giờ ta có thể sử dụng *Books* một cách trực tiếp để định nghĩa các biến của kiểu cấu trúc *Books* mà không sử dụng từ khóa **struct**. Ví dụ:
+`Books Book1, Book2;`
+
+- Ta có thể sử dụng từ khóa **typedef** cho các dạng không phải cấu trúc, như sau:
+```
+typedef long int *pint32;
+pint32 x,y,z;
+```
+x,y và z là tất cả con trỏ trỏ tới kiểu *long int*
+ 
